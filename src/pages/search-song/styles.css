@@ -1,0 +1,47 @@
+.search-box {
+    border-radius: 15px;
+    width: 60%;
+    height: 30px
+}
+
+.search-button {
+    height: 33px;
+    filter: invert(100%) sepia(2%) saturate(9%) hue-rotate(21deg) brightness(106%) contrast(102%);
+    align-self: center;
+    margin-left: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-container {
+    padding: 10px
+}
+
+.search-filter-dropdown {
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.no-result-text {
+    text-align: center;
+    margin-top:20px
+}

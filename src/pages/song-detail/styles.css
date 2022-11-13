@@ -1,0 +1,49 @@
+.song-image-detail {
+    width: 200px;
+    height: 200px;
+}
+
+.song-detail-container {
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    height: 200px;
+    align-items: center;
+}
+
+.song-information-detail {
+    margin-left: 20px;
+    width:30%
+}
+
+#ref-to-album-detail-page-button {
+    background-color: #1db954;
+    border: none;
+    color: white;
+    border-radius: 500px;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    margin-left: 0;
+    transform: scale(0.95);
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px; 
+}
+
+.song-title-detail {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.song-duration-detail {
+    color: #b3b3b3;
+}
+
+.song-title-and-edit-delete-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+.main-section {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.prevnexticon {
+  /* height 50px */
+  width: 25px;
+
+  filter: invert(1);
+}
+.song-album-form-container {
+  background-color: #242424;
+  border-radius: 20px;
+  width: 60%;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.song-album-form {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  align-self: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.form-label {
+  color: white;
+}
+
+#navbar {
+  background-color: #000000;
+}
+
+.song-album-form-container > * {
+  align-self: center;
+}
+.label-input-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 10px;
+}
+
+.form-input {
+  border-radius: 5px;
+  height: 30px;
+}
+
+.form-header {
+  font-weight: 300;
+  color: white;
+}
+
+.form-submit {
+  background-color: #1db954;
+  border: none;
+  color: white;
+  border-radius: 500px;
+  height: 40px;
+  min-width: 150px;
+  width: 20%;
+  margin: 10px;
+  transform: scale(0.95);
+}
+
+.form-submit:hover {
+  transform: scale(1);
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+html {
+  /* spotify font family */
+
+  font-family: "Montserrat", CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic";
+
+  line-height: 1.5; /* 2 */
+}
+
+body {
+  margin: 0;
+  background-color: #1f1f1f;
+  color: white;
+  /* border white */
+  /* border: 1px solid white; */
+  /* margin */
+}
+
+
+main {
+  display: block;
+}
+
+a {
+  background-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button {
+  text-decoration: inherit;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  padding: 0;
+  color: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border-style: none;
+}
+
+.list-header-container {
+  padding: 10px;
+  margin: 0 10px;
+  padding-top: 0;
+  display: flex;
+}
+
+.list-title {
+  font-size: 30px;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.list-title:hover {
+  text-decoration: underline;
+}
+
+.move-page-button-container {
+  /* item on the right */
+  display: flex;
+  justify-content: flex-end;
+  margin: auto 0 auto auto ;
+}
+
+.move-page-button {
+  background-color: #181818;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.update-add-song-album-image {
+  object-fit: cover;
+  /* border-radius: 0.5em; */
+  /* border: 2px solid #fefefe; */
+  margin: auto 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 230px;
+  height: 230px;
+}
+
+
+.move-page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+
+.update-album-song-edit-button{
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(113%) contrast(101%);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 1em;
+  cursor: auto;
+}
+
+.update-album-song-edit-button:hover{
+  filter: invert(65%) sepia(68%) saturate(473%) hue-rotate(179deg) brightness(98%) contrast(103%);
+  cursor: pointer;
+
+}
+
+.update-album-song-erase-button img{
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(113%) contrast(101%);
+}
+
+.update-album-song-erase-button img:hover{
+  filter: invert(15%) sepia(80%) saturate(6424%) hue-rotate(358deg) brightness(110%) contrast(115%)
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.login-register-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  color: white;
+  padding: 3rem;
+  width: 40%;
+  height: 90vh;
+  margin: auto;
+}
+
+.login-register-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.5rem;
+  color: white
+}
+
+.status-container {
+  height: 1.5rem;
+}
+
+.login-register-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-self: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.ref-to-login-register-page {
+  color: white;
+
+}
+
+.brand-logo-login-register-container {
+  text-align: center;
+}
+
+.brand-logo-login-register {
+  width: 200px
+}

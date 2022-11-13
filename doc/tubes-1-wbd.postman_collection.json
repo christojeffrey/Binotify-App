@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "5ffd1d8c-c6c6-45c4-8ddc-c4204cdf8129",
+		"name": "tubes-1-wbd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21752923"
+	},
+	"item": [
+		{
+			"name": "Song",
+			"item": [
+				{
+					"name": "Add Song",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "upwVrHqT5TwaZYR7nrHNwqU+IhRWC5UwOe1LQ68slkZI5fx824YvSE5SXcTGdcwEuET\\/vyfqd7zI7iAzhv7zAE5YT08Cfiq4zXWU\\/AALbA0=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"song_title\": \"test beda song and album singer\",\r\n        \"singer\": \"singerrr\",\r\n        \"publish_date\": \"2021-06-05\",\r\n        \"genre\": \"genre\",\r\n        \"audio_path\": \"/public/song.mp3\",\r\n        \"image_path\": \"/public/song.jpg\",\r\n        \"duration\": 100,\r\n        \"album_id\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/song/addSong.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"song",
+								"addSong.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Song",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/song/getSongDetail.php?song_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"song",
+								"getSongDetail.php"
+							],
+							"query": [
+								{
+									"key": "song_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Song List",
+					"request": {
+						"auth": {
+							"type": "basic"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/song/getSongList.php?page=1&offset=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"song",
+								"getSongList.php"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Song",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/song/deleteSong.php?song_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"song",
+								"deleteSong.php"
+							],
+							"query": [
+								{
+									"key": "song_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Song",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "upwVrHqT5TwaZYR7nrHNwqU+IhRWC5UwOe1LQ68slkZI5fx824YvSE5SXcTGdcwEkbz+zJKolW1XdW32KLkI4Mgt+VM+JvKN5qPLhgAIFag=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"song_id\": 5,\r\n        \"song_title\": \"song pertama yh\",\r\n        \"singer\": \"singer\",\r\n        \"publish_date\": \"2021-06-05\",\r\n        \"genre\": \"genre\",\r\n        \"audio_path\": \"/public/song.mp3\",\r\n        \"image_path\": \"/public/song.jpg\",\r\n        \"duration\": 100,\r\n        \"album_id\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/song/updateSongDetail.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"song",
+								"updateSongDetail.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Song",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\r\n        {\r\n        \"search_key\": \"title\",\r\n        \"search_value\": \"aaa\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/song/searchSong.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"song",
+								"searchSong.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Album",
+			"item": [
+				{
+					"name": "Add Album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"album_title\": \"album_title\",\r\n        \"singer\": \"singer\",\r\n        \"image_path\": \"/public/album.jpg\",\r\n        \"publish_date\": \"2022-10-22\",\r\n        \"genre\": \"genre\"\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/album/addAlbum.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"album",
+								"addAlbum.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Album Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/album/getAlbumDetail.php?album_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"album",
+								"getAlbumDetail.php"
+							],
+							"query": [
+								{
+									"key": "album_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
