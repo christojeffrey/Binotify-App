@@ -98,12 +98,15 @@ function formSubmit() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const password2 = document.getElementById("password2").value;
+  const raw_password = document.getElementById("password").value;
+  const raw_password2 = document.getElementById("password2").value;
+  const password = sha256(raw_password);
+  const password2 = sha256(raw_password2);
+
   //   console.log(email, username, password, password2);
 
   //   check if all the field is filled
-  if (name === "" || email === "" || username === "" || password === "" || password2 === "") {
+  if (name === "" || email === "" || username === "" || raw_password === "" || raw_password2 === "") {
     document.getElementById("status").innerHTML = "Please fill all the field";
     return;
   }
@@ -115,6 +118,14 @@ function formSubmit() {
     return;
   }
 
+  //   check if password length is more than 8
+  if (raw_password.length < 3) {
+    document.getElementById("password").style.borderColor = "red";
+    document.getElementById("password2").style.borderColor = "red";
+    document.getElementById("status").innerHTML = "Password must be more than 3 characters";
+    return;
+  }
+
   //   check if password match
   if (password !== password2) {
     document.getElementById("password").style.borderColor = "red";
@@ -123,13 +134,6 @@ function formSubmit() {
     return;
   }
 
-  //   check if password length is more than 8
-  if (password.length < 3) {
-    document.getElementById("password").style.borderColor = "red";
-    document.getElementById("password2").style.borderColor = "red";
-    document.getElementById("status").innerHTML = "Password must be more than 3 characters";
-    return;
-  }
 
   //   check if username length is more than 8
   if (username.length < 3) {

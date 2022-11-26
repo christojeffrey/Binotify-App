@@ -2,13 +2,16 @@ function formSubmit() {
   // get username from id username
   const username = document.getElementById("username").value;
   // get password from id password
-  const password = document.getElementById("password").value;
-
-  if (username === "" || password === "") {
+  const raw_password = document.getElementById("password").value;
+  
+  if (username === "" || raw_password === "") {
     document.getElementById("status").innerHTML = "Please fill all the field";
     return;
   }
-
+  
+  // hash password
+  const password = sha256(raw_password)
+  
   document.getElementById("status").innerHTML = "logging in...";
   POST_API("../../api/auth/login.php", null, { username, password }, (status, data) => {
     if (status === 200) {
