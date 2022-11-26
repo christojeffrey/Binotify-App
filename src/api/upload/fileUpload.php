@@ -19,7 +19,7 @@
 
         $location = "../../assets/" . $type . "/";
         move_uploaded_file($file_tmp, $location . $name);
-        exitWithDataReturned(array("file_name"=> $name));
+        exitWithDataReturned(array("file_path"=> $location . $name));
     } else {
         exitWithError(400, 'Audio file is needed');
     }
