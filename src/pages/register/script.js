@@ -100,8 +100,8 @@ function formSubmit() {
   const username = document.getElementById("username").value;
   const raw_password = document.getElementById("password").value;
   const raw_password2 = document.getElementById("password2").value;
-  const password = sha256(password);
-  const password2 = sha256(password2);
+  const password = sha256(raw_password);
+  const password2 = sha256(raw_password2);
 
   //   console.log(email, username, password, password2);
 

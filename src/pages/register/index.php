@@ -17,7 +17,7 @@
             <a href="../../pages/home/index.php"  class="brand-logo-login-register-container">
                 <img src="../../assets/logo/brand-logo.png" class="brand-logo-login-register"/>
             </a>
-            <form onsubmit="formSubmit()" class="login-register-form" onchange="onFormChange()">
+            <form onsubmit="formSubmit()" class="login-register-form">
                 <!-- name -->
                 <div class="label-input-form-container">
                     <label for="name"><b>Name</b></label>
