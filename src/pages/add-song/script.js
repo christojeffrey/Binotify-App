@@ -3,7 +3,6 @@ const addSong = () => {
     const singer = document.getElementById('singer').value;
     const publish_date = document.getElementById('publish-date').value;
     const genre = document.getElementById('genre').value;
-    const duration = 0;
     const album_id = document.getElementById('album-id').value;
 
     const unique_file_name = Date.now()
@@ -41,10 +40,9 @@ const addSong = () => {
                 alert("error uploading audio");
                 return;
             } else {
-                const audio = new Audio(data['file_path']);
+                var audio = new Audio(data['file_path']);
                 audio.onloadedmetadata = () => {
-                    duration = audio.duration;
-
+                    const duration = audio.duration;
                     const body = {
                         "song_title": song_title,
                         "singer": singer,
@@ -67,7 +65,7 @@ const addSong = () => {
                             alert("error")
                         }
                     });
-                    
+
                 }
             }
         })
