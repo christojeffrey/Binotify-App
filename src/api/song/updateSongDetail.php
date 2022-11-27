@@ -9,24 +9,24 @@
     $body = json_decode(file_get_contents('php://input'), true);
 
     if (isset($_REQUEST["delete-album"]) && $_REQUEST["delete-album"] == "1") {
-        if (!validateNeededKeys($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'duration'))) {
+        if (!validateNeededKeys($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre'))) {
             exitWithError(400, 'All song detail is needed');
         }
     } else{
-        if (!validateNeededKeys($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'duration', 'album_id'))) {
+        if (!validateNeededKeys($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'album_id'))) {
             exitWithError(400, 'All song detail is needed');
         }
     }
 
-    if (isset($_REQUEST["delete-album"]) && $_REQUEST["delete-album"] == "1") {
-        if (!validateKeyValueIsNotNull($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'duration'))) {
-            exitWithError(400, 'All song detail must be filled');
-        }
-    } else {
-        if (!validateKeyValueIsNotNull($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'duration', 'album_id'))) {
-            exitWithError(400, 'All song detail must be filled');
-        }
-    }
+    // if (isset($_REQUEST["delete-album"]) && $_REQUEST["delete-album"] == "1") {
+    //     if (!validateKeyValueIsNotNull($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'duration'))) {
+    //         exitWithError(400, 'All song detail must be filled');
+    //     }
+    // } else {
+    //     if (!validateKeyValueIsNotNull($body, array('song_id', 'song_title', 'singer', 'publish_date', 'genre', 'duration', 'album_id'))) {
+    //         exitWithError(400, 'All song detail must be filled');
+    //     }
+    // }
    
 
     if (preg_match('/\//', $body['audio_path']) || preg_match('/\//', $body['image_path'])) {
@@ -90,13 +90,14 @@
     }
 
     if ($body['audio_path'] == null) {
-        $sql = "SELECT audio_path FROM Song WHERE song_id = ?"; 
+        $sql = "SELECT audio_path, duration FROM Song WHERE song_id = ?"; 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $body['song_id']);
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
             $audio_path = $row['audio_path'];
+            $duration = $row['duration'];
         }
         $stmt->close();
     } else {
