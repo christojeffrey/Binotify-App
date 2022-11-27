@@ -35,6 +35,14 @@ CREATE TABLE IF NOT EXISTS `Song` (
     FOREIGN KEY (`album_id`) REFERENCES `Album`(`album_id`) ON DELETE SET NULL
     );
 
+CREATE TABLE IF NOT EXISTS `Subscription` (
+    `creator_id` int(11) NOT NULL,
+    `subscriber_id` int(11) NOT NULL,
+    `status` ENUM('pending', 'accepted', 'rejected') NOT NULL DEFAULT 'pending',
+    PRIMARY KEY (`creator_id`, `subscriber_id`),
+    FOREIGN KEY (`creator_id`) REFERENCES `User`(`user_id`) ON DELETE CASCADE
+);
+
 
 
 -- create trigger
