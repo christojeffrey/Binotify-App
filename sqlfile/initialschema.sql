@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `Subscription` (
     `subscriber_id` int(11) NOT NULL,
     `status` ENUM('pending', 'accepted', 'rejected') NOT NULL DEFAULT 'pending',
     PRIMARY KEY (`creator_id`, `subscriber_id`),
-    FOREIGN KEY (`creator_id`) REFERENCES `User`(`user_id`) ON DELETE CASCADE
+    FOREIGN KEY (`subscriber_id`) REFERENCES `User`(`user_id`) ON DELETE CASCADE
 );
 
 
@@ -74,10 +74,10 @@ WHERE Album.album_id = OLD.album_id;
 -- insert intial data
 -- insert admin
 INSERT INTO `User` (`name`, `email`, `password`, `username`, `is_admin`) VALUES
-('andika', 'email@example.com', 'admin', 'admin', true);
+('admin', 'admin@admin.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', true);
 -- insert user
 INSERT INTO `User` (`name`, `email`, `password`, `username`, `is_admin`) VALUES
-('budi', 'email@user.com', 'user', 'user', false);
+('user', 'user@user.com', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'user', false);
 
 -- add album
 -- i met you when i was 18
