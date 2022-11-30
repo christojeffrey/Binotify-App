@@ -9,7 +9,7 @@ const fetchSongs = () => {
 
     document.getElementById("singer-name").innerHTML = singer_name + "'s Premium Songs";
 
-    const user_id = parseInt(localStorage.getItem("user_id"));
+    const user_id = parseInt(localStorage.getItem("id"));
 
     const body = {
         "creator_ids" : [singer_id],
