@@ -29,6 +29,7 @@ function formSubmit() {
       }
       localStorage.setItem("user_id", data.user_id);
       localStorage.setItem("username", username);
+      localStorage.setItem("id", data.id);
       window.location.href = "../home/index.php";
     } else {
       // else, show error message

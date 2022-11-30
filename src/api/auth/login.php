@@ -52,10 +52,10 @@
 
         if ($data['role'] == 'user') {
             $conn->close();
-            exitWithDataReturned(array('user_token' => $token, 'user_id' => $data['id']));
+            exitWithDataReturned(array('user_token' => $token, 'id' => $data['id']));
         } else  { //($data['role'] == 'admin')
             $conn->close();
-            exitWithDataReturned(array('admin_token' => $token, 'user_id' => $data['id']));
+            exitWithDataReturned(array('admin_token' => $token, 'id' => $data['id']));
         }
     }
 ?>

@@ -46,5 +46,5 @@
     );
     $token = encodeToken($data);
     $conn->close();
-    exitWithDataReturned(array('token' => $token));
+    exitWithDataReturned(array('token' => $token, 'id' => $data['id']));
 ?>
