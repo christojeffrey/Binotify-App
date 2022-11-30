@@ -1,6 +1,10 @@
 // a place for js function that can be used accross the app by importing them
 
 // ===CONSTANT===
+const config = {
+  REST_API_URL: "http://localhost:8085",
+  SOAP_API_URL: "http://localhost:8083/api/binotify",
+};
 const TIMEOUT_TIME = 10000;
 const BASE_URL = "/../../";
 const genre_list = [

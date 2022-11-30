@@ -28,6 +28,7 @@ function formSubmit() {
         // set username to local storage
       }
       localStorage.setItem("username", username);
+      localStorage.setItem("id", data.id);
       window.location.href = "../home/index.php";
     } else {
       // else, show error message
