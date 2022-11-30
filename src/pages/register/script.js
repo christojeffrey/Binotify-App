@@ -150,6 +150,7 @@ function formSubmit() {
       localStorage.setItem("user_token", data.token);
       //  set username to local storage
       localStorage.setItem("username", username);
+      localStorage.setItem("id", data.id);
       //   redirect to pages/home-user
       window.location.href = "../home/index.php";
     } else {
