@@ -100,7 +100,6 @@ body {
   /* margin */
 }
 
-
 main {
   display: block;
 }
@@ -155,7 +154,7 @@ img {
   /* item on the right */
   display: flex;
   justify-content: flex-end;
-  margin: auto 0 auto auto ;
+  margin: auto 0 auto auto;
 }
 
 .move-page-button {
@@ -168,7 +167,6 @@ img {
   margin: 0 0.5rem;
   transform: scale(0.95);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
 }
 
 .update-add-song-album-image {
@@ -176,11 +174,10 @@ img {
   /* border-radius: 0.5em; */
   /* border: 2px solid #fefefe; */
   margin: auto 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 230px;
   height: 230px;
 }
-
 
 .move-page-button:disabled {
   cursor: not-allowed;
@@ -188,8 +185,7 @@ img {
   transform: scale(0.95);
 }
 
-
-.update-album-song-edit-button{
+.update-album-song-edit-button {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(113%) contrast(101%);
   width: 1.5rem;
   height: 1.5rem;
@@ -197,13 +193,12 @@ img {
   cursor: auto;
 }
 
-.update-album-song-edit-button:hover{
+.update-album-song-edit-button:hover {
   filter: invert(65%) sepia(68%) saturate(473%) hue-rotate(179deg) brightness(98%) contrast(103%);
   cursor: pointer;
-
 }
 
-.update-album-song-erase-button img{
+.update-album-song-erase-button img {
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
@@ -211,8 +206,8 @@ img {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(113%) contrast(101%);
 }
 
-.update-album-song-erase-button img:hover{
-  filter: invert(15%) sepia(80%) saturate(6424%) hue-rotate(358deg) brightness(110%) contrast(115%)
+.update-album-song-erase-button img:hover {
+  filter: invert(15%) sepia(80%) saturate(6424%) hue-rotate(358deg) brightness(110%) contrast(115%);
 }
 button,
 input,
@@ -224,7 +219,6 @@ textarea {
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
-
 
 button,
 select {
@@ -270,7 +264,7 @@ select {
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 0.5rem;
-  color: white
+  color: white;
 }
 
 .status-container {
@@ -288,7 +282,6 @@ select {
 
 .ref-to-login-register-page {
   color: white;
-
 }
 
 .brand-logo-login-register-container {
@@ -296,5 +289,8 @@ select {
 }
 
 .brand-logo-login-register {
-  width: 200px
+  width: 200px;
+}
+input {
+  border: 3px solid white;
 }
