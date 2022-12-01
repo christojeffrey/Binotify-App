@@ -10,6 +10,7 @@
 
         if ($is_admin){
             // admin navbar
+            $user_navbar = "";
             $admin_navbar = <<<ADMIN_NAVBAR
             <li class="nav-item">
                 <a class="nav-link" href="../add-song/index.php">Add Song</a>
@@ -23,6 +24,11 @@
             ADMIN_NAVBAR;
         } else {
             $admin_navbar = "";
+            $user_navbar = <<<USER_NAVBAR
+            <li class="nav-item">
+                <a class="nav-link" href="../premium-singers/index.php">Premium Singers</a>
+            </li>
+            USER_NAVBAR;
         }
         if($is_logged_in){
             // logged in navbar
@@ -75,6 +81,7 @@
                         <a class="nav-link" href="../search-song/index.php">Search</a>
                     </li>
                     $admin_navbar
+                    $user_navbar
                     $logged_in_navbar
                 </ul>
             </div>
