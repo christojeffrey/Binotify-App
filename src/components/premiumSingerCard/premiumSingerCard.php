@@ -3,14 +3,14 @@
         // $singer_id, $name, $is_subscribed, $on_click_subscribe, $on_click_go_to_premium_songs_page
 
         extract($args);
-
+        echo $is_subsctibed;
         $subscribe_button = "";
         $go_to_premium_songs_page_button = "";
         if (!$is_subscribed){
             $subscribe_button = 
             <<<EOT
             <button onclick="$on_click_subscribe($id)">
-                <img class="subscribe-button" src="../../assets/icons/plus.svg" alt="Subscribe"/>
+                Subscribe
             </button>
             EOT;
             $play_button = "";
@@ -18,7 +18,7 @@
             $go_to_premium_songs_page_button = 
             <<<EOT
             <button onclick="$on_click_go_to_premium_songs_page()">
-                <img class="go-to-premium-songs-page-button" src="../../assets/icons/plus.svg" alt="Subscribe"/>
+                Go to
             </button>
             EOT;
         }
@@ -44,10 +44,9 @@
                     <div class="premium-singer-desc">
                         $name
                     </div>
-                    <Button>
-                        Subscribe
-                    </Button>
-
+                    
+                    $subscribe_button
+                    $go_to_premium_songs_page_button
             </div>
         EOT;
         return $html;

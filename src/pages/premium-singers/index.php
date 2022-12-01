@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template</title>
     <!-- styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 
 </head>
 
 <body>
-<div class="">
+    <div class="">
         <div class="flex">
             <aside id="navbar">
 

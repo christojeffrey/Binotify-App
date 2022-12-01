@@ -8,16 +8,16 @@
         exitWithError(500, $map['err']);
     }
 
-
-    // check if page and limit number is provided
+    // get subscribed id from params
     if (!empty($_REQUEST["subscriber_id"])) {
-        $subscriber_id = intval($_REQUEST["page"]);
+        $subscriber_id = intval($_REQUEST["subscriber_id"]);
 
 
         // count total number of row in song table
         $stmt = $conn->prepare("SELECT creator_id FROM Subscription WHERE subscriber_id = ? AND status = ?");
 
-        $status = "ACCEPTED";
+    
+        $status = "accepted";
         $stmt->bind_param("is", $subscriber_id, $status);
     } else {
         exitWithError(500, "subscriber_id is not provided");
