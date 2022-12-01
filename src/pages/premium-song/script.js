@@ -1,10 +1,10 @@
 // === function ===
 const fetchSongs = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    if (!urlParams.has("singer_id") || !urlParams.has("singer_name")) {
+    if (!urlParams.has("creator_id") || !urlParams.has("singer_name")) {
         window.location.href = "/home";
     }
-    const singer_id = parseInt(urlParams.get("singer_id"));
+    const creator_id = parseInt(urlParams.get("creator_id"));
     const singer_name = urlParams.get("singer_name");
 
     document.getElementById("singer-name").innerHTML = singer_name + "'s Premium Songs";
@@ -12,7 +12,7 @@ const fetchSongs = () => {
     const user_id = parseInt(localStorage.getItem("id"));
 
     const body = {
-        "creator_ids" : [singer_id],
+        "creator_ids" : [creator_id],
         "subscriber_id" : user_id,
     }
 
