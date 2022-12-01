@@ -17,25 +17,26 @@ function createNewSubscription($creator_id,  $subscriber_id) {
     $stmt->bind_param("ii", $subscriber_id, $creator_id);
 
     $result = $stmt->execute();
+    $conn->close();
     if ($result) {
-        $conn->close();
         return true;
     } else {
-        $conn->close();
         return false;
     }
 };
 
+// parse body
 $body = json_decode(file_get_contents('php://input'), true);
-var_dump($body);
 if (!validateNeededKeys($body, array('creator_id',  'subscriber_id'))) {
     exitWithError(400, 'Singer and subscriber id is needed');
 }
 
+// get data from body
 $creator_id = intval($body["creator_id"]);
 $subscriber_id = intval($body["subscriber_id"]);
 
 
+// hit soap
 $webservice_url = "http://binotify_soap:8080/api/binotify";
 
 $request_body = '
@@ -64,9 +65,15 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
+// check the return value from soap
 if ($result !== FALSE) {
+    // update internal database
     if (createNewSubscription($creator_id,  $subscriber_id)) {
-        exitWithDataReturned(array("message" => "created"));
+        $res = array(
+            'status' => 'success',
+            'message' => 'Subscription created'
+        );
+        exitWithDataReturned($res);
     } else {
         exitWithError(500, "Failed to create subscription");
     }

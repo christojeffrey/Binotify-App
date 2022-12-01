@@ -178,6 +178,7 @@ function POST_API(apiLoc, authHeader = null, jsonBodyData, callbackfn) {
 
   xhr.onload = (e) => {
     if (xhr.readyState === 4) {
+      console.log("xhr.responseText");
       console.log(xhr.responseText);
       callbackfn(xhr.status, JSON.parse(xhr.responseText));
     }

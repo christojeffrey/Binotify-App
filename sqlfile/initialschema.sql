@@ -78,12 +78,11 @@ WHERE Album.album_id = OLD.album_id;
 INSERT INTO User (`name`, `email`, `password`, `username`, `is_admin`) VALUES
 ('admin', 'admin@admin.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', true);
 
-
-
-
 -- insert user
 INSERT INTO User (`name`, `email`, `password`, `username`, `is_admin`) VALUES
 ('user', 'user@user.com', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'user', false);
+
+
 
 -- add album
 -- i met you when i was 18
@@ -141,3 +140,7 @@ INSERT INTO Song (`song_title`, `singer`, `publish_date`, `genre`, `duration`, `
 
 INSERT INTO Song (`song_title`, `singer`, `publish_date`, `genre`, `duration`, `audio_path`, `image_path`) VALUES
 ('Tak Beralbum 3', 'lauv', '2020-01-01', 'Pop', 243, 'mean_it.mp3', 'mean_it.jpg');
+
+-- add subscription
+INSERT INTO Subscription (`creator_id`, `subscriber_id`) VALUES (1, 2);
+INSERT INTO Subscription (`creator_id`, `subscriber_id`) VALUES (2, 2);
