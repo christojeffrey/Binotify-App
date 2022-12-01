@@ -1,24 +1,22 @@
 const subscriber_id = localStorage.getItem("id");
 
-
-const subscribeSinger = (creator_id) => {
-    let temp;
-    const body = {
-      "subscriber_id": subscriber_id,
-      "creator_id": creator_id,
-    }
-    POST_API(`../../api/subscription/subscribeSinger.php`, null, body, (status, data) => {
+const subscribeSinger = (creator_id, subscriber_id) => {
+  console.log("creator_id", creator_id);
+  console.log("subscriber_id", subscriber_id);
+  console.log("testing");
+  const body = {
+    subscriber_id: subscriber_id,
+    creator_id: creator_id,
+  };
+  POST_API(`../../api/subscription/subscribeSinger.php`, null, body, (status, data) => {
     if (status === 200) {
       alert("Subscription request sent");
       window.location.reload();
-    } 
+    }
   });
 };
 
-
-
 const fetchPremiumSingers = async () => {
-
   // get all singers
   let allSingers = await fetch(`${config.REST_API_URL}/singer`, {
     method: "GET",
@@ -52,7 +50,6 @@ const fetchPremiumSingers = async () => {
         // append child song_list
         premium_singer_list.innerHTML += `<div id="premium-singer-card-container-${i}"></div>`;
       }
-
 
       allSingers.forEach((singer, index) => {
         LOAD_COMPONENT(
