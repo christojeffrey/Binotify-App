@@ -76,7 +76,24 @@ const fetchPremiumSingers = async () => {
   });
 };
 
+const checkIsDataStale = () => {
+  let shouldRefresh;
+  GET_API("../../api/subscription/checkAllSubscription.php", token, (status, data) => {
+    if (status === 200) {
+      // will return false or true
+      shouldRefresh = data;
+      console.log("shouldRefresh", shouldRefresh);
+      if (shouldRefresh) {
+        // reload page
+        window.location.reload();
+      }
+    }
+  });
+};
+checkIsDataStale();
 checkTokenOnPageLoad(false);
 LOAD_NAVBAR();
 LOAD_ACCOUNT_INFO();
 fetchPremiumSingers();
+// run check is data stale every 15 minutes
+setInterval(checkIsDataStale, 15 * 60 * 1000);
