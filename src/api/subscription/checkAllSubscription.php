@@ -72,12 +72,13 @@ function checkAllSubscription(){
         $status = $row['status'];
         // change status to upper case
         $status = strtoupper($status);
+        $soap_status = hitSoap($creator_id, $subscriber_id);
         // check if the subscription status is the same with soap
-        if($status != hitSoap($creator_id, $subscriber_id)){
+        if($status != $soap_status){
             // if not, update the status
             // app_status is lowercase
-            $app_status = strtolower($status);
-            updateSubscription($creator_id, $subscriber_id, $app_status);
+            $new_app_status = strtolower($soap_status);
+            updateSubscription($creator_id, $subscriber_id, $new_app_status);
             $isAnyUpdated = true;
         } 
     }
